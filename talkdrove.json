@@ -1,0 +1,13 @@
+{
+  "bot-name": "SHUKRANI",
+  "description": "SHUKRANI WhatsApp bot by RAY-MJESHI",
+  "logo": "https://files.catbox.moe/bvy2u1.jpg",
+  "documentation-link": "https://github.com/Raymond-te/shukran.git",
+  "env": {
+    "SESSION_ID": {
+      "description": "Must begin with 'SHUKRANI:~'",
+      "value": "SHUKRANI:~your-session-id-here",
+      "required": false
+    }
+  }
+}
