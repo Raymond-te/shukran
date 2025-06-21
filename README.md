@@ -1,6 +1,3 @@
-
-<h1 align="center">âœ§ SHUKRANI WhatsApp Bot âœ§</h1>
-
 <p align="center">
   <a href="https://github.com/Raymond-te/shukran">
     <img alt="SHUKRANI Banner" height="350" src="https://files.catbox.moe/bvy2u1.jpg">
