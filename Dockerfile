@@ -1,25 +1,31 @@
+# Use Node.js LTS
 FROM node:lts
 
-# Install dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg imagemagick webp && apt-get clean
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    imagemagick \
+    webp \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy dependency definitions
+COPY ./package.json ./package-lock.json* ./
 
-# Install dependencies
-RUN npm install && npm cache clean --force
+# Install npm dependencies
+RUN npm install
 
-# Copy application code
+# Copy application source
 COPY . .
 
-# Expose port
+# Expose app port (optional)
 EXPOSE 3000
 
-# Set environment
+# Define environment (optional)
 ENV NODE_ENV production
 
-# Run command
-CMD ["npm", "run", "start"]
+# Start the app
+CMD ["npm", "start"]
